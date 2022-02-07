@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+body{
+    padding: 0;
+    margin: 0%;
+    background: #dbdfe9;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 620px, 100vh;  
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-areas: 
+    'output output output output'
+    'clear delete percent divide'
+    'seven eight nine multiply'
+    'four five six subtract'
+    'one two three add'
+    'pos-neg zero decimal equal';
+    background: linear-gradient(to bottom, #bccad6, #667292);
+    border-radius: 10px;
+    color: white;
+}
+
+.calculator > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid gainsboro;
+    outline: none;
+    background: transparent;
+    color: white; 
+}
+
+.calculator > button:hover {
+    background-color: rgba(255, 255, 255, 90%);
+}
+
+.output {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    grid-area: output;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid white;
+}
+
+.output .previous-display {
+    color: white; opacity: 80%;
+    font-size: 1.5rem;
+}
+
+.output .current-display {
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+#btn1{
+    grid-area: one;
+}
+
+#btn2{
+    grid-area: two;
+}
+
+#btn3{
+    grid-area: three;
+}
+
+#btn4{
+    grid-area: four;
+}
+
+#btn5{
+    grid-area: five;
+}
+
+#btn6{
+    grid-area: six;
+}
+
+#btn7{
+    grid-area: seven;
+}
+
+#btn8{
+    grid-area: eight;
+}
+
+#btn9{
+    grid-area: nine;
+
+}
+
+#btn0{
+    grid-area: zero;
+}
+
+#btn-decimal {
+    grid-area: decimal;
+}
+
+#btn-add{
+    grid-area: add;
+}
+
+#btn-subtract{
+    grid-area: subtract;
+}
+
+#btn-multiply{
+    grid-area: multiply;
+}
+
+#btndivide{
+    grid-area: divide;
+}
+
+#btn-equal{
+    grid-area: equal;
+}
+
+#btn-clear{
+    grid-area: clear;
+}
+
+#btn-delete{
+    grid-area: delete;
+}
+
+#btn-pos-neg{
+    grid-area: pos-neg;
+} 
+
+#btn-percent{
+    grid-area: percent;
+}
