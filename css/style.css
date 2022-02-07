@@ -24,7 +24,7 @@ body{
     align-content: center;
     height: 620px, 100vh;  
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-rows: minmax(150px, auto) repeat(5, 100px);
     grid-template-areas: 
     'output output output output'
     'clear delete percent divide'
@@ -47,7 +47,8 @@ body{
 }
 
 .calculator > button:hover {
-    background-color: rgba(255, 255, 255, 90%);
+    background: linear-gradient(rgba(0,0,0,.327), rgba(0,0,0,.3));
+    color: white;
 }
 
 .output {
