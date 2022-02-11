@@ -93,7 +93,6 @@ class Calculator{
         if(isNaN(percentNumber)){
             return;
         }
-        // percent = percentNumber * .01;
         percent = percentNumber / 100;
         this.currentNumber = percent;
     }
@@ -185,7 +184,12 @@ btnPosNeg.addEventListener('click', button =>{
 
 //collect key clicks
 window.addEventListener('keydown', e => {
-    if(parseFloat(e.key)){
+    if(e.key == 0){
+        let num = parseFloat(e.key)
+        calculator.makeNumber(num);
+        calculator.updateDisplay();
+    }
+    else if(parseFloat(e.key)){
         calculator.makeNumber(e.key);
         calculator.updateDisplay();
         }
@@ -207,15 +211,19 @@ window.addEventListener('keydown', e => {
             calculator.updateDisplay();
             break;
         case 'Enter':
-            calculator.compute();
+            calculator.compute(e.key);
+            calculator.updateDisplay();
+            break;
+        case '=':
+            calculator.compute(e.key);
             calculator.updateDisplay();
             break;
         case 'Backspace':
-            calculator.delete();
+            calculator.delete(e.key);
             calculator.updateDisplay();
             break;
         case 'Delete':
-            calculator.clear();
+            calculator.clear(e.key);
             calculator.updateDisplay();
             break;
         default:
